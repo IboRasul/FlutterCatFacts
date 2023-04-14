@@ -21,7 +21,7 @@ class Fact{
 
 }
 
-Future<Fact> fetchQuote() async{
+Future<Fact> fetchCat() async{
   final url='https://catfact.ninja/fact';
   final response= await get(Uri.parse(url));
   print(response.body);
@@ -47,9 +47,9 @@ class _catFactsState extends State<catFacts> {
   Fact? _fact;
 
   Future<void> _updateScreen() async{
-    final quote= await fetchQuote();
+    final fact= await fetchCat();
     setState(() {
-      _fact = quote;
+      _fact = fact;
     });
   }
 
